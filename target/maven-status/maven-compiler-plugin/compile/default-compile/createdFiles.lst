@@ -1,0 +1,14 @@
+hu\kitsoo\gipguard\commands\ActivateCommand.class
+hu\kitsoo\gipguard\commands\ReloadCommand.class
+hu\kitsoo\gipguard\GIPGuardCommand.class
+hu\kitsoo\gipguard\util\ConfigUtil.class
+hu\kitsoo\gipguard\events\JoinEvent.class
+hu\kitsoo\gipguard\database\DatabaseManager.class
+hu\kitsoo\gipguard\util\ChatUtil.class
+hu\kitsoo\gipguard\commands\AddCommand.class
+hu\kitsoo\gipguard\commands\RemoveCommand.class
+hu\kitsoo\gipguard\GIPGuard.class
+hu\kitsoo\gipguard\events\JoinEvent$1.class
+hu\kitsoo\gipguard\commands\CheckCommand.class
+hu\kitsoo\gipguard\util\TabComplete.class
+hu\kitsoo\gipguard\commands\ListCommand.class

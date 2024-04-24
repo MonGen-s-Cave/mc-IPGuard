@@ -1,0 +1,32 @@
+prefix: "&x&b&8&0&0&1&1&lg&x&b&e&0&0&0&f&lI&x&c&4&0&0&0&c&lP&x&c&a&0&0&0&a&lG&x&d&1&0&0&0&7&lu&x&d&7&0&0&0&5&la&x&d&d&0&0&0&2&lr&x&e&3&0&0&0&0&ld &8» "
+
+#  driver: sqlite / mysql
+database:
+  driver: "sqlite"
+  host: "localhost"
+  port: 3306
+  name: "database_name"
+  username: "database_username"
+  password: "database_password"
+  pool:
+    maximumPoolSize: 10
+    minimumIdle: 5
+    connectionTimeout: 30000
+    maxLifetime: 1800000
+    idleTimeout: 600000
+
+hooks:
+  # Supported Auth plugins: AuthMe, nLogin
+  auth: "AuthMe"
+
+discord:
+  enabled: false
+  webhook-url: ""
+  embed:
+    title: ":warning: A player tried to access a protected account."
+    description: "**The user details:**\n> Username: **%player%** \n> IP-Address: **%ip_address%** \n> Exact Date: **%date%**"
+    color: "#36393F"
+    footer: "Glowing Studios - gDiscordSync Logs"
+    timestamp: true
+
+config-version: "4"
