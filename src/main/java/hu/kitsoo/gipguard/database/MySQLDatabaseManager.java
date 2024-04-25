@@ -20,10 +20,16 @@ public class MySQLDatabaseManager implements DatabaseInterface {
         String username = configUtil.getConfig().getString("database.username");
         String password = configUtil.getConfig().getString("database.password");
 
-        String jdbcUrl = "jdbc:mysql://" + host + ":" + port + "/" + databaseName + "?useSSL=false";
+        String jdbcUrl = "jdbc:mysql://" + host + ":" + port + "/" + databaseName + "?useSSL=true";
         config.setJdbcUrl(jdbcUrl);
         config.setUsername(username);
         config.setPassword(password);
+
+        config.setMaximumPoolSize(configUtil.getConfig().getInt("database.pool.maximumPoolSize", 10));
+        config.setMinimumIdle(configUtil.getConfig().getInt("database.pool.minimumIdle", 5));
+        config.setConnectionTimeout(configUtil.getConfig().getLong("database.pool.connectionTimeout", 30000L));
+        config.setMaxLifetime(configUtil.getConfig().getLong("database.pool.maxLifetime", 1800000L));
+        config.setIdleTimeout(configUtil.getConfig().getLong("database.pool.idleTimeout", 600000L));
 
         dataSource = new HikariDataSource(config);
         createPlayerTable();
