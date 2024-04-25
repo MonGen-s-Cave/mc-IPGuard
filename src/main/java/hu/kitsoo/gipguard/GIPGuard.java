@@ -8,7 +8,8 @@ import org.bstats.bukkit.Metrics;
 import org.bukkit.ChatColor;
 import org.bukkit.plugin.java.JavaPlugin;
 
-import java.util.Objects;
+import java.sql.SQLException;
+import java.util.logging.Level;
 
 public class GIPGuard extends JavaPlugin {
 
@@ -22,32 +23,35 @@ public class GIPGuard extends JavaPlugin {
         int pluginId = 21069;
         new Metrics(this, pluginId);
 
-        System.out.println(ChatColor.GREEN + "The plugin successfully enabled.");
-        System.out.println(ChatColor.GREEN + "Plugin developed by Glowing Studios. https://discord.gg/esxwNC4DmZ");
+        getLogger().info("Plugin developed by Glowing Studios. https://discord.gg/esxwNC4DmZ");
 
-        DatabaseManager.initialize(configUtil);
+        try {
+            DatabaseManager.initialize(configUtil);
+        } catch (Exception e) {
+            getLogger().log(Level.SEVERE, "Failed to initialize database", e);
+        }
 
         getServer().getPluginManager().registerEvents(new JoinEvent(this, configUtil), this);
-        Objects.requireNonNull(getCommand("gipguard")).setTabCompleter(new TabComplete(this));
-        Objects.requireNonNull(getCommand("gipguard")).setExecutor(new GIPGuardCommand(this, configUtil));
+        getCommand("gipguard").setTabCompleter(new TabComplete(this));
+        getCommand("gipguard").setExecutor(new GIPGuardCommand(this, configUtil));
 
         getLogger().info(ChatColor.YELLOW + "Selected database type: " + DatabaseManager.getDatabaseType());
 
-        String authPlugin = configUtil.getConfig().getString("hooks.auth", "");
+        String authPlugin = configUtil.getConfig().getString("hooks.auth", "").toLowerCase();
         if (authPlugin.isEmpty()) {
             getLogger().info("No authentication plugin hook is configured.");
             return;
         }
 
         switch (authPlugin) {
-            case "AuthMe":
+            case "authme":
                 if (getServer().getPluginManager().getPlugin("AuthMe") != null) {
                     getLogger().info(ChatColor.AQUA + "Hooking into AuthMe for authentication.");
                 } else {
                     getLogger().warning("AuthMe is configured but not found. Please install AuthMe or update the configuration.");
                 }
                 break;
-            case "nLogin":
+            case "nlogin":
                 if (getServer().getPluginManager().getPlugin("nLogin") != null) {
                     getLogger().info(ChatColor.AQUA + "Hooking into nLogin for authentication.");
                 } else {
@@ -66,6 +70,10 @@ public class GIPGuard extends JavaPlugin {
 
     @Override
     public void onDisable() {
-        DatabaseManager.close();
+        try {
+            DatabaseManager.close();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 }

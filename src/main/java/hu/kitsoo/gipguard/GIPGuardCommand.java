@@ -6,25 +6,34 @@ import hu.kitsoo.gipguard.util.ConfigUtil;
 import org.bukkit.command.Command;
 import org.bukkit.command.CommandExecutor;
 import org.bukkit.command.CommandSender;
-import org.bukkit.plugin.java.JavaPlugin;
 
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class GIPGuardCommand implements CommandExecutor {
 
-    private final JavaPlugin plugin;
+    private final GIPGuard plugin;
     private final ConfigUtil configUtil;
+    private Map<String, CommandExecutor> commands = new HashMap<>();
 
-    public GIPGuardCommand(JavaPlugin plugin, ConfigUtil configUtil) {
+    public GIPGuardCommand(GIPGuard plugin, ConfigUtil configUtil) {
         this.plugin = plugin;
         this.configUtil = configUtil;
+        initializeCommands();
+    }
+
+    private void initializeCommands() {
+        commands.put("reload", new ReloadCommand(plugin, configUtil));
+        commands.put("remove", new RemoveCommand(plugin, configUtil));
+        commands.put("add", new AddCommand(plugin, configUtil));
+        commands.put("list", new ListCommand(plugin, configUtil));
+        commands.put("check", new CheckCommand(plugin, configUtil));
+        commands.put("activate", new ActivateCommand(plugin, configUtil));
     }
 
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
-
-        String prefix = configUtil.getMessages().getString("prefix");
-        prefix = ChatUtil.colorizeHex(prefix);
 
         List<String> helpMenuList = configUtil.getMessages().getStringList("help-menu");
         StringBuilder helpMenuBuilder = new StringBuilder();
@@ -36,36 +45,19 @@ public class GIPGuardCommand implements CommandExecutor {
         String helpMenu = helpMenuBuilder.toString().trim();
         helpMenu = ChatUtil.colorizeHex(helpMenu);
 
-        if (args.length == 0 || args.length < 1) {
+        if (args.length == 0) {
             sender.sendMessage(helpMenu);
             return true;
         }
 
         String subCommand = args[0].toLowerCase();
+        CommandExecutor executor = commands.get(subCommand);
 
-        switch (subCommand) {
-            case "reload":
-                ReloadCommand reloadCommand = new ReloadCommand((GIPGuard) plugin, configUtil);
-                return reloadCommand.onCommand(sender, command, label, args);
-            case "remove":
-                RemoveCommand removeCommand = new RemoveCommand((GIPGuard) plugin, configUtil);
-                return removeCommand.onCommand(sender, command, label, args);
-            case "add":
-                AddCommand addCommand = new AddCommand((GIPGuard) plugin, configUtil);
-                return addCommand.onCommand(sender, command, label, args);
-            case "list":
-                ListCommand listCommand = new ListCommand((GIPGuard) plugin, configUtil);
-                return listCommand.onCommand(sender, command, label, args);
-            case "check":
-                CheckCommand checkCommand = new CheckCommand((GIPGuard) plugin, configUtil);
-                return checkCommand.onCommand(sender, command, label, args);
-            case "activate":
-                ActivateCommand activateCommand = new ActivateCommand((GIPGuard) plugin, configUtil);
-                activateCommand.onCommand(sender, command, label, args);
-                return true;
-            default:
-                sender.sendMessage(helpMenu);
-                return true;
+        if (executor != null) {
+            return executor.onCommand(sender, command, label, args);
+        } else {
+            sender.sendMessage(helpMenu);
+            return true;
         }
     }
 }
