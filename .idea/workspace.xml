@@ -1,0 +1,382 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="67d7d712-429e-482e-8e66-b6c0e82a6531" name="Changes" comment="gIPGuard v1.0.4" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="CodeInsightWorkspaceSettings">
+    <option name="optimizeImportsOnTheFly" value="true" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PUSH_AUTO_UPDATE" value="true" />
+    <option name="PUSH_TAGS">
+      <GitPushTagMode>
+        <option name="argument" value="--tags" />
+        <option name="title" value="All" />
+      </GitPushTagMode>
+    </option>
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;Glowing-Studios&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/Glowing-Studios/gIPGuard&quot;,
+    &quot;accountId&quot;: &quot;3d0e2cf4-ebd3-471a-ae06-2b50c44ee6e3&quot;
+  }
+}</component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProblemsViewState">
+    <option name="selectedTabId" value="CurrentFile" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;ff0000ff&quot;,
+  &quot;associatedIndex&quot;: 0
+}</component>
+  <component name="ProjectId" id="2Z2x8ZlU01GoKrE5TKCcgB33ShH" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Maven.gIPGuard [clean,install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.gIPGuard [clean,package,-X].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.gIPGuard [clean,package].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.gIPGuard [install].executor&quot;: &quot;Run&quot;,
+    &quot;Maven.gIPGuard package.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
+    &quot;full.screen.before.presentation.mode&quot;: &quot;false&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;gIPGuard&quot;,
+    &quot;ignore.virus.scanning.warn.message&quot;: &quot;true&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Users/bolon/IdeaProjects/gIPGuard&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  },
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlite&quot;
+    ]
+  }
+}</component>
+  <component name="RecentsManager">
+    <key name="CreateClassDialog.RecentsKey">
+      <recent name="hu.kitsoo.gIPGuard" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\bolon\IdeaProjects" />
+      <recent name="C:\Users\bolon\IdeaProjects\gIPGuard\target" />
+    </key>
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="mvn install" />
+      <command value="mvn clean install" />
+      <command value="mvn clean package -X " />
+      <command value="mvn clean package " />
+    </option>
+  </component>
+  <component name="RunManager">
+    <configuration name="gIPGuard package" type="MavenRunConfiguration" factoryName="Maven">
+      <MavenSettings>
+        <option name="myGeneralSettings" />
+        <option name="myRunnerSettings" />
+        <option name="myRunnerParameters">
+          <MavenRunnerParameters>
+            <option name="cmdOptions" />
+            <option name="profiles">
+              <set />
+            </option>
+            <option name="goals">
+              <list>
+                <option value="package" />
+              </list>
+            </option>
+            <option name="multimoduleDir" />
+            <option name="pomFileName" />
+            <option name="profilesMap">
+              <map />
+            </option>
+            <option name="projectsCmdOptionValues">
+              <list />
+            </option>
+            <option name="resolveToWorkspace" value="false" />
+            <option name="workingDirPath" value="$PROJECT_DIR$" />
+          </MavenRunnerParameters>
+        </option>
+      </MavenSettings>
+      <method v="2" />
+    </configuration>
+  </component>
+  <component name="SharedIndexes">
+    <attachedChunks>
+      <set>
+        <option value="bundled-jdk-9f38398b9061-39b83d9b5494-intellij.indexing.shared.core-IU-241.15989.150" />
+        <option value="bundled-js-predefined-1d06a55b98c1-91d5c284f522-JavaScript-IU-241.15989.150" />
+      </set>
+    </attachedChunks>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="67d7d712-429e-482e-8e66-b6c0e82a6531" name="Changes" comment="" />
+      <created>1701633824236</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1701633824236</updated>
+      <workItem from="1701633825264" duration="64634000" />
+      <workItem from="1701783818824" duration="7206000" />
+      <workItem from="1701791406152" duration="162000" />
+      <workItem from="1701797394657" duration="4848000" />
+      <workItem from="1701810422824" duration="2812000" />
+      <workItem from="1701820071797" duration="3584000" />
+      <workItem from="1701877512788" duration="4424000" />
+      <workItem from="1701981826815" duration="179000" />
+      <workItem from="1702107243182" duration="5463000" />
+      <workItem from="1702298865229" duration="531000" />
+      <workItem from="1702299506389" duration="436000" />
+      <workItem from="1702359922340" duration="14200000" />
+      <workItem from="1702456361925" duration="3061000" />
+      <workItem from="1702476116478" duration="1639000" />
+      <workItem from="1702479836372" duration="2920000" />
+      <workItem from="1702487107869" duration="621000" />
+      <workItem from="1702536060989" duration="182000" />
+      <workItem from="1702536263794" duration="519000" />
+      <workItem from="1702536811959" duration="156000" />
+      <workItem from="1702536996539" duration="61000" />
+      <workItem from="1702537080337" duration="2617000" />
+      <workItem from="1702544023620" duration="1914000" />
+      <workItem from="1702822102942" duration="562000" />
+      <workItem from="1702822691898" duration="2086000" />
+      <workItem from="1702824837360" duration="2042000" />
+      <workItem from="1702830845848" duration="836000" />
+      <workItem from="1702831736110" duration="1393000" />
+      <workItem from="1702837441181" duration="167000" />
+      <workItem from="1702837764754" duration="216000" />
+      <workItem from="1702838298262" duration="868000" />
+      <workItem from="1702839294754" duration="142000" />
+      <workItem from="1702839555226" duration="266000" />
+      <workItem from="1702839912212" duration="3750000" />
+      <workItem from="1702890783520" duration="8348000" />
+      <workItem from="1702912848782" duration="5803000" />
+      <workItem from="1702918984807" duration="1129000" />
+      <workItem from="1702989284579" duration="5223000" />
+      <workItem from="1703016726445" duration="1118000" />
+      <workItem from="1703078483250" duration="7000" />
+      <workItem from="1703105939266" duration="141000" />
+      <workItem from="1703106303449" duration="309000" />
+      <workItem from="1703154421043" duration="2444000" />
+      <workItem from="1703158579169" duration="193000" />
+      <workItem from="1703159477984" duration="236000" />
+      <workItem from="1703176674223" duration="4900000" />
+      <workItem from="1703187326554" duration="213000" />
+      <workItem from="1703187833418" duration="5391000" />
+      <workItem from="1703201760939" duration="590000" />
+      <workItem from="1703235154303" duration="2001000" />
+      <workItem from="1703243845226" duration="2029000" />
+      <workItem from="1703246011635" duration="2006000" />
+      <workItem from="1703256662402" duration="1331000" />
+      <workItem from="1703258093192" duration="9135000" />
+      <workItem from="1703501636621" duration="6365000" />
+      <workItem from="1703516406966" duration="7372000" />
+      <workItem from="1703585471502" duration="25000" />
+      <workItem from="1703599093466" duration="11000" />
+      <workItem from="1703610290289" duration="324000" />
+      <workItem from="1703617249603" duration="1887000" />
+      <workItem from="1703619168480" duration="8437000" />
+      <workItem from="1703633384162" duration="3912000" />
+      <workItem from="1703676697965" duration="797000" />
+      <workItem from="1703677549415" duration="27000" />
+      <workItem from="1703677599426" duration="635000" />
+      <workItem from="1703686611629" duration="1887000" />
+      <workItem from="1703689335498" duration="1425000" />
+      <workItem from="1703706038990" duration="203000" />
+      <workItem from="1703706994102" duration="65000" />
+      <workItem from="1703707097791" duration="3853000" />
+      <workItem from="1703712077441" duration="4124000" />
+      <workItem from="1703765686248" duration="1448000" />
+      <workItem from="1703770213976" duration="612000" />
+      <workItem from="1703772297145" duration="66000" />
+      <workItem from="1703794495489" duration="221000" />
+      <workItem from="1703795097483" duration="162000" />
+      <workItem from="1703830798399" duration="11000" />
+      <workItem from="1704119988220" duration="527000" />
+      <workItem from="1704397350734" duration="29000" />
+      <workItem from="1705151324779" duration="36000" />
+      <workItem from="1707398494214" duration="9447000" />
+      <workItem from="1707408393514" duration="13000" />
+      <workItem from="1707534469173" duration="13000" />
+      <workItem from="1708047249770" duration="1000" />
+      <workItem from="1708431670911" duration="35000" />
+      <workItem from="1708431728710" duration="31000" />
+      <workItem from="1708431767143" duration="31000" />
+      <workItem from="1708431816991" duration="44000" />
+      <workItem from="1708431872573" duration="38000" />
+      <workItem from="1708431921355" duration="26000" />
+      <workItem from="1708431962935" duration="22000" />
+      <workItem from="1708432002707" duration="61000" />
+      <workItem from="1708432108814" duration="254000" />
+      <workItem from="1708432386044" duration="48000" />
+      <workItem from="1708432446125" duration="152000" />
+      <workItem from="1708432608704" duration="16000" />
+      <workItem from="1708432632535" duration="1311000" />
+      <workItem from="1708861511830" duration="239000" />
+      <workItem from="1709295053493" duration="1323000" />
+      <workItem from="1709296401819" duration="2598000" />
+      <workItem from="1709299101062" duration="28000" />
+      <workItem from="1709299141213" duration="44000" />
+      <workItem from="1709299209021" duration="21000" />
+      <workItem from="1709299242683" duration="3453000" />
+      <workItem from="1709322015805" duration="2381000" />
+      <workItem from="1709325331257" duration="210000" />
+      <workItem from="1709325907868" duration="4000" />
+      <workItem from="1709333801227" duration="8198000" />
+      <workItem from="1709852687058" duration="987000" />
+      <workItem from="1709853710208" duration="6804000" />
+      <workItem from="1709984782957" duration="5161000" />
+      <workItem from="1709999627793" duration="2199000" />
+      <workItem from="1710014986216" duration="698000" />
+      <workItem from="1710086146648" duration="517000" />
+      <workItem from="1710363679760" duration="597000" />
+      <workItem from="1710453135427" duration="202000" />
+      <workItem from="1710484487710" duration="287000" />
+      <workItem from="1710514639077" duration="115000" />
+      <workItem from="1710614114933" duration="895000" />
+      <workItem from="1710621946048" duration="15000" />
+      <workItem from="1710939280754" duration="710000" />
+      <workItem from="1711140952276" duration="29000" />
+      <workItem from="1711148224149" duration="1263000" />
+      <workItem from="1711208609299" duration="27000" />
+      <workItem from="1711209094452" duration="3221000" />
+      <workItem from="1711242032949" duration="10000" />
+      <workItem from="1711242166691" duration="44000" />
+      <workItem from="1711537630212" duration="736000" />
+      <workItem from="1711550505776" duration="1804000" />
+      <workItem from="1711785416864" duration="2383000" />
+      <workItem from="1711788234209" duration="488000" />
+      <workItem from="1711812176121" duration="5011000" />
+      <workItem from="1711926023181" duration="36000" />
+      <workItem from="1713764305672" duration="119000" />
+      <workItem from="1713913232487" duration="45000" />
+      <workItem from="1713913299091" duration="31000" />
+      <workItem from="1713913391968" duration="16000" />
+      <workItem from="1713923677149" duration="5703000" />
+      <workItem from="1713975622802" duration="1314000" />
+      <workItem from="1713986696114" duration="16954000" />
+      <workItem from="1714005355266" duration="1398000" />
+      <workItem from="1714072031194" duration="587000" />
+      <workItem from="1715122777785" duration="20000" />
+      <workItem from="1715123112097" duration="9000" />
+      <workItem from="1715123243650" duration="234000" />
+      <workItem from="1715134518252" duration="20000" />
+    </task>
+    <task id="LOCAL-00001" summary="gIPGuard">
+      <option name="closed" value="true" />
+      <created>1713976096052</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1713976096052</updated>
+    </task>
+    <task id="LOCAL-00002" summary="gIPGuard v1.0.4 update released">
+      <option name="closed" value="true" />
+      <created>1714005115489</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1714005115489</updated>
+    </task>
+    <task id="LOCAL-00003" summary="gIPGuard v1.0.4 update released">
+      <option name="closed" value="true" />
+      <created>1714005554687</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1714005554687</updated>
+    </task>
+    <task id="LOCAL-00004" summary="gIPGuard v1.0.4">
+      <option name="closed" value="true" />
+      <created>1714006030410</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1714006030410</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="gIPGuard" />
+    <MESSAGE value="gIPGuard v1.0.4 update released" />
+    <MESSAGE value="gIPGuard v1.0.4" />
+    <option name="LAST_COMMIT_MESSAGE" value="gIPGuard v1.0.4" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
