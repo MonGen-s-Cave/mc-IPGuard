@@ -7,6 +7,7 @@ import dev.triumphteam.cmd.core.annotation.SubCommand;
 import hu.kxtsoo.ipguard.database.DatabaseManager;
 import hu.kxtsoo.ipguard.util.ConfigUtil;
 import org.bukkit.command.CommandSender;
+import org.bukkit.plugin.java.JavaPlugin;
 
 import java.sql.SQLException;
 
@@ -15,9 +16,11 @@ import java.sql.SQLException;
 public class ReloadCommand extends BaseCommand {
 
     private final ConfigUtil configUtil;
+    private final JavaPlugin plugin;
 
-    public ReloadCommand(ConfigUtil configUtil) {
+    public ReloadCommand(ConfigUtil configUtil, JavaPlugin plugin) {
         this.configUtil = configUtil;
+        this.plugin = plugin;
     }
 
     @SubCommand("reload")
@@ -28,7 +31,7 @@ public class ReloadCommand extends BaseCommand {
         configUtil.reloadConfig();
 
         try {
-            DatabaseManager.initialize(configUtil);
+            DatabaseManager.initialize(configUtil, plugin);
         } catch (SQLException e) {
             e.printStackTrace();
         }

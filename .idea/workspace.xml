@@ -4,7 +4,33 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="67d7d712-429e-482e-8e66-b6c0e82a6531" name="Changes" comment="2.0.0" />
+    <list default="true" id="67d7d712-429e-482e-8e66-b6c0e82a6531" name="Changes" comment="2.0.0">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/IPGuard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/IPGuard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/commands/ActivateCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/commands/ActivateCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/commands/AddCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/commands/AddCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/commands/CheckCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/commands/CheckCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/commands/ListCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/commands/ListCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/commands/ReloadCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/commands/ReloadCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/commands/RemoveCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/commands/RemoveCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/database/DatabaseInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/database/DatabaseInterface.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/database/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/database/DatabaseManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/database/impl/MySQL.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/database/impl/MySQL.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/database/impl/SQLite.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/database/impl/SQLite.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/events/JoinEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/listeners/PlayerJoinListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/manager/CommandManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/manager/CommandManager.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/util/ChatUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/util/ChatUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/hooks.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hooks.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/locale/en.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/locale/en.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/locale/hu.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/locale/hu.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -370,7 +396,23 @@
       <option name="project" value="LOCAL" />
       <updated>1734101661841</updated>
     </task>
-    <option name="localTasksCounter" value="9" />
+    <task id="LOCAL-00009" summary="2.0.0">
+      <option name="closed" value="true" />
+      <created>1734101721379</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1734101721379</updated>
+    </task>
+    <task id="LOCAL-00010" summary="2.0.0">
+      <option name="closed" value="true" />
+      <created>1734101773682</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1734101773682</updated>
+    </task>
+    <option name="localTasksCounter" value="11" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">

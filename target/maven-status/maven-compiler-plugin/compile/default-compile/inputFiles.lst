@@ -5,11 +5,15 @@ C:\Users\KomPhone\IdeaProjects\mc-IPGuard\src\main\java\hu\kxtsoo\ipguard\databa
 C:\Users\KomPhone\IdeaProjects\mc-IPGuard\src\main\java\hu\kxtsoo\ipguard\IPGuard.java
 C:\Users\KomPhone\IdeaProjects\mc-IPGuard\src\main\java\hu\kxtsoo\ipguard\util\ConfigUtil.java
 C:\Users\KomPhone\IdeaProjects\mc-IPGuard\src\main\java\hu\kxtsoo\ipguard\commands\ActivateCommand.java
+C:\Users\KomPhone\IdeaProjects\mc-IPGuard\src\main\java\hu\kxtsoo\ipguard\hooks\AuthHook.java
+C:\Users\KomPhone\IdeaProjects\mc-IPGuard\src\main\java\hu\kxtsoo\ipguard\listeners\PlayerJoinListener.java
 C:\Users\KomPhone\IdeaProjects\mc-IPGuard\src\main\java\hu\kxtsoo\ipguard\manager\CommandManager.java
 C:\Users\KomPhone\IdeaProjects\mc-IPGuard\src\main\java\hu\kxtsoo\ipguard\commands\CheckCommand.java
 C:\Users\KomPhone\IdeaProjects\mc-IPGuard\src\main\java\hu\kxtsoo\ipguard\commands\ListCommand.java
 C:\Users\KomPhone\IdeaProjects\mc-IPGuard\src\main\java\hu\kxtsoo\ipguard\util\ChatUtil.java
+C:\Users\KomPhone\IdeaProjects\mc-IPGuard\src\main\java\hu\kxtsoo\ipguard\hooks\HookManager.java
+C:\Users\KomPhone\IdeaProjects\mc-IPGuard\src\main\java\hu\kxtsoo\ipguard\hooks\impl\AuthMeHook.java
 C:\Users\KomPhone\IdeaProjects\mc-IPGuard\src\main\java\hu\kxtsoo\ipguard\database\impl\SQLite.java
+C:\Users\KomPhone\IdeaProjects\mc-IPGuard\src\main\java\hu\kxtsoo\ipguard\hooks\impl\nLoginHook.java
 C:\Users\KomPhone\IdeaProjects\mc-IPGuard\src\main\java\hu\kxtsoo\ipguard\commands\ReloadCommand.java
 C:\Users\KomPhone\IdeaProjects\mc-IPGuard\src\main\java\hu\kxtsoo\ipguard\database\impl\MySQL.java
-C:\Users\KomPhone\IdeaProjects\mc-IPGuard\src\main\java\hu\kxtsoo\ipguard\events\JoinEvent.java

@@ -1,38 +1,48 @@
 messages:
-  reload-success: "&x&2&b&f&b&0&0The plugin files have been successfully reloaded!"
-  no-permission: "&x&f&b&2&5&2&5You don't have permission to do this command."
-  too-many-args: "&x&f&b&2&5&2&5You tried to use too many arguments while using the command."
-  added-player: "&fYou have &x&2&b&f&b&0&0successfully assigned&f the IP Address &7&n%ip_address%&r &fto &c%player% &fplayer account!"
-  invalid-format: "&x&f&b&2&5&2&5The IP Address format is incorrect!"
-  removed-player: "&x&2&b&f&b&0&0%player% player IP address has been removed from the database."
-  player-not-found: "&x&f&b&2&5&2&5This player name is not in the database!"
-  database-error: "&x&f&b&2&5&2&5An error occurred while communicating with the database!"
+  player-not-found: "%prefix% &cEz a játékos nem található!"
+  database-error: "%prefix% &cProbléma lépett fel az adatbázissal kapcsolatban."
+  only-player: "%prefix% &cEz a parancsot kizárólag játékos futtathatja."
+
   player-kick:
-    - '&x&b&8&0&0&1&1&lg&x&b&e&0&0&0&f&lI&x&c&4&0&0&0&c&lP&x&c&a&0&0&0&a&lG&x&d&1&0&0&0&7&lu&x&d&7&0&0&0&5&la&x&d&d&0&0&0&2&lr&x&e&3&0&0&0&0&ld &8» &fYou have been kicked from the server.'
-    - '&r'
-    - '&fReason: &7This user account is IP address protected!'
-    - '&r'
-    - '&7&nwww.yourserver.com'
-  players-list: "&fPlayers in database: "
-  no-players-list: "&x&f&b&2&5&2&5No players in database!"
-  player-name-format: "&e%player%"
-  ip-address-format: "&7(%ip_address%)"
-  player-exists: "&x&2&b&f&b&0&0The %player% player is in the database. IP address: %ip_address%"
-  player-not-exists: "&x&f&b&2&5&2&5The player %player% is not in the database."
-  check-usage: "&x&f&b&2&5&2&5Correct usage: /gipguard check <playername>"
-  activation-successful: "&x&2&b&f&b&0&0You have activated IP Protection for the account %player%. The IP address is %ip_address%"
-  deactivation-successful: "&x&2&b&f&b&0&0You have successfully disabled IP Protection on the account!"
+    - "%prefix%"
+    - "&e⚠ Ki lettél rúgva ⚠"
+    - "&r"
+    - "&fKi lettél rúgva a szerverről."
+    - "&fLegyél biztos, hogy a saját fiókodba próbálsz belépni!"
+    - ""
+    - "&6Indok: &7Ez a felhasználói fiók IP-cím védett!"
+    - "&r"
+    - "&fHa segítségre van szükséged, fordulj csapatunkhoz!"
+    - "&8Discord @ dc.mongenscave.com"
 
-help-menu:
-  - "&r"
-  - "&x&b&8&0&0&1&1&lg&x&b&e&0&0&0&f&lI&x&c&4&0&0&0&c&lP&x&c&a&0&0&0&a&lG&x&d&1&0&0&0&7&lu&x&d&7&0&0&0&5&la&x&d&d&0&0&0&2&lr&x&e&3&0&0&0&0&ld &8» &fAvailable commands:"
-  - "&r"
-  - "&8&l• &c/gipguard add <player> <ip> &8- &7Assign an IP Address to an account."
-  - "&8&l• &c/gipguard remove <player> &8- &7Delete the player's details from database."
-  - "&8&l• &c/gipguard reload &8- &7Reload the plugin config file."
-  - "&r"
-  - "&fIf u need some help join our Discord server!"
-  - "&x&7&2&8&9&d&ahttps://discord.gg/f5E4wCwG7g"
-  - "&r"
+  activate-command:
+    usage: "%prefix% &fHasználat: &7/ipguard activate"
+    activated: "%prefix% &aAktiváltad az IP-védelmet a %player% fiókhoz. Az IP-cím: %ip_address%"
+    deactivated: "%prefix% &aSikeresen deaktiváltad az IP-védelmet a fiókhoz!"
 
-version: '1'
+  add-command:
+    usage: "%prefix% &fHasználat: &7/ipguard add <player> <ip-address>"
+    invalid-format: "%prefix% &cAz IP-cím formátuma helytelen!"
+    added-player: "%prefix% &aSikeresen hozzárendelted a %ip_address% IP-címet %player% fiókhoz!"
+
+  remove-command:
+    usage: "%prefix% &fHasználat: &7/ipguard remove <player>"
+    removed-player: "%prefix% &a%player% játékos IP-címét eltávolítottad az adatbázisból."
+
+  check-command:
+    usage: "%prefix% &fUsage &7/ipguard check <player>"
+    player-exists: "%prefix% &aA %player% játékos IP-címe: %ip_cím%"
+
+  list-command:
+    no-players: "%prefix% &cNincs játékos az adatbázisban!"
+    players-list: "%prefix% &fTalált játékosok az adatbázisban:"
+    format:
+      player-name: "&e%player%"
+      ip-address: "&7(%ip_address%)"
+
+  reload-command:
+    success: "%prefix% &aA plugin fájlok sikeresen újratöltve!"
+
+update-notify: "%prefix% &aÚj frissítés érhető el a pluginhoz! &8(&c%current_version% &f→ &e%latest_version%&8)"
+
+version: "1"

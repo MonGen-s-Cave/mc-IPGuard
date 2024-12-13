@@ -31,16 +31,15 @@ public class ActivateCommand extends BaseCommand {
             return;
         }
 
-        String playerName = player.getName();
         String ipAddress = Objects.requireNonNull(player.getAddress()).getAddress().getHostAddress();
 
         try {
-            if (DatabaseManager.doesPlayerExist(playerName)) {
-                DatabaseManager.removePlayer(playerName);
+            if (DatabaseManager.doesPlayerExist(player.getUniqueId().toString())) {
+                DatabaseManager.removePlayer(player.getUniqueId().toString());
                 sender.sendMessage(configUtil.getMessage("messages.activate-command.deactivated"));
             } else {
-                DatabaseManager.addPlayer(playerName, ipAddress);
-                sender.sendMessage(configUtil.getMessage("messages.activate-command.activated").replace("%player%", playerName).replace("%ip_address%", ipAddress));
+                DatabaseManager.addPlayer(player.getUniqueId().toString(), ipAddress);
+                sender.sendMessage(configUtil.getMessage("messages.activate-command.activated").replace("%player%", player.getName()).replace("%ip_address%", ipAddress));
             }
         } catch (SQLException e) {
             e.printStackTrace();

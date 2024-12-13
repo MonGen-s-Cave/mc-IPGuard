@@ -1,48 +1,58 @@
 package hu.kxtsoo.ipguard.database.impl;
 
+import hu.kxtsoo.ipguard.IPGuard;
 import hu.kxtsoo.ipguard.database.DatabaseInterface;
+import hu.kxtsoo.ipguard.util.ConfigUtil;
 import org.bukkit.plugin.java.JavaPlugin;
+import org.h2.jdbc.JdbcConnection;
 
 import java.io.File;
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 
-public class SQLite implements DatabaseInterface {
+public class H2 implements DatabaseInterface {
 
     private final JavaPlugin plugin;
     private Connection connection;
+    private final ConfigUtil configUtil;
 
-    public SQLite(JavaPlugin plugin) {
+    public H2(JavaPlugin plugin, ConfigUtil configUtil) {
         this.plugin = plugin;
+        this.configUtil = configUtil;
     }
 
     @Override
-    public void initialize() throws SQLException {
-        File dataFolder = plugin.getDataFolder();
-        if (!dataFolder.exists()) {
-            dataFolder.mkdirs();
+    public void initialize() {
+        try {
+            File dataFolder = plugin.getDataFolder();
+            if (!dataFolder.exists()) {
+                dataFolder.mkdirs();
+            }
+
+            connection = new JdbcConnection("jdbc:h2:./" + IPGuard.getInstance().getDataFolder() + "/data;mode=MySQL", new Properties(), null, null, false);
+            connection.setAutoCommit(true);
+
+            createTables();
+        } catch (SQLException e) {
+            throw new RuntimeException("Could not connect to the H2 database", e);
         }
-
-        String url = "jdbc:sqlite:" + new File(dataFolder, "database.db").getAbsolutePath();
-        connection = DriverManager.getConnection(url);
-
-        createTables();
     }
 
     @Override
     public void createTables() throws SQLException {
-        try (Statement statement = connection.createStatement()) {
+        try (Statement stmt = connection.createStatement()) {
             String sql = "CREATE TABLE IF NOT EXISTS ipguard_players (" +
-                    "uuid TEXT PRIMARY KEY, " +
-                    "ip_address TEXT)";
-            statement.execute(sql);
+                    "uuid CHAR(36) PRIMARY KEY, " +
+                    "ip_address VARCHAR(255))";
+            stmt.execute(sql);
         }
     }
 
     @Override
     public void addPlayer(String uuid, String ipAddress) throws SQLException {
-        String sql = "INSERT OR REPLACE INTO ipguard_players (uuid, ip_address) VALUES (?, ?)";
+        String sql = "MERGE INTO ipguard_players (uuid, ip_address) KEY(uuid) VALUES (?, ?)";
         try (PreparedStatement statement = connection.prepareStatement(sql)) {
             statement.setString(1, uuid);
             statement.setString(2, ipAddress);
@@ -57,17 +67,6 @@ public class SQLite implements DatabaseInterface {
             statement.setString(1, uuid);
             try (ResultSet resultSet = statement.executeQuery()) {
                 return resultSet.next();
-            }
-        }
-    }
-
-    @Override
-    public String getPlayerIP(String uuid) throws SQLException {
-        String sql = "SELECT ip_address FROM ipguard_players WHERE uuid = ?";
-        try (PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setString(1, uuid);
-            try (ResultSet resultSet = statement.executeQuery()) {
-                return resultSet.next() ? resultSet.getString("ip_address") : "N/A";
             }
         }
     }
@@ -96,9 +95,24 @@ public class SQLite implements DatabaseInterface {
     }
 
     @Override
-    public void close() throws SQLException {
-        if (connection != null) {
-            connection.close();
+    public String getPlayerIP(String uuid) throws SQLException {
+        String sql = "SELECT ip_address FROM ipguard_players WHERE uuid = ?";
+        try (PreparedStatement statement = connection.prepareStatement(sql)) {
+            statement.setString(1, uuid);
+            try (ResultSet resultSet = statement.executeQuery()) {
+                return resultSet.next() ? resultSet.getString("ip_address") : "N/A";
+            }
+        }
+    }
+
+    @Override
+    public void close() {
+        try {
+            if (connection != null && !connection.isClosed()) {
+                connection.close();
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException("Could not close the H2 database connection", e);
         }
     }
 }

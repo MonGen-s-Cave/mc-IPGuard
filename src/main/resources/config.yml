@@ -1,9 +1,9 @@
 prefix: "&#B80F25[IPGuard]"
 
-#  driver: sqlite / mysql
-database:
-  #  driver: sqlite / mysql
-  driver: "sqlite"
+storage:
+  # Drivers: SQLite, MySQL, H2
+  # Recommended: H2
+  driver: "h2"
 
   host: "localhost"
   port: 3306
@@ -20,10 +20,6 @@ database:
 
 locale: en
 
-hooks:
-  # Supported Auth plugins: AuthMe, nLogin
-  auth: "AuthMe"
-
 discord:
   enabled: false
   webhook-url: ""
@@ -31,7 +27,10 @@ discord:
     title: ":warning: A player tried to access a protected account."
     description: "**The user details:**\n> Username: **%player%** \n> IP-Address: **%ip_address%** \n> Exact Date: **%date%**"
     color: "#36393F"
-    footer: "Glowing Studios - gIPGuard Logs"
+    footer: "MonGen's Cave - mc-IPGuard Logs"
     timestamp: true
+
+update-checker:
+  enable: true
 
 version: '1'

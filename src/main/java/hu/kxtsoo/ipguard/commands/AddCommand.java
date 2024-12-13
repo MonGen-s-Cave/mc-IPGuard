@@ -6,6 +6,8 @@ import dev.triumphteam.cmd.core.annotation.Command;
 import dev.triumphteam.cmd.core.annotation.SubCommand;
 import hu.kxtsoo.ipguard.database.DatabaseManager;
 import hu.kxtsoo.ipguard.util.ConfigUtil;
+import org.bukkit.Bukkit;
+import org.bukkit.OfflinePlayer;
 import org.bukkit.command.CommandSender;
 
 import java.sql.SQLException;
@@ -31,8 +33,16 @@ public class AddCommand extends BaseCommand {
             return;
         }
 
+        OfflinePlayer player = Bukkit.getOfflinePlayer(playerName);
+        String uuid = player.getUniqueId().toString();
+
+        if (uuid == null || uuid.isEmpty()) {
+            sender.sendMessage(configUtil.getMessage("messages.player-not-found").replace("%player%", playerName));
+            return;
+        }
+
         try {
-            DatabaseManager.addPlayer(playerName, ipAddress);
+            DatabaseManager.addPlayer(uuid, ipAddress);
             sender.sendMessage(configUtil.getMessage("messages.add-command.added-player").replace("%player%", playerName)
                     .replace("%ip_address%", ipAddress));
         } catch (SQLException e) {

@@ -1,9 +1,11 @@
 package hu.kxtsoo.ipguard;
 
 import hu.kxtsoo.ipguard.database.DatabaseManager;
-import hu.kxtsoo.ipguard.events.JoinEvent;
+import hu.kxtsoo.ipguard.hooks.HookManager;
+import hu.kxtsoo.ipguard.listeners.PlayerJoinListener;
 import hu.kxtsoo.ipguard.manager.CommandManager;
 import hu.kxtsoo.ipguard.util.ConfigUtil;
+import hu.kxtsoo.ipguard.util.UpdateChecker;
 import org.bstats.bukkit.Metrics;
 import org.bukkit.plugin.java.JavaPlugin;
 
@@ -14,6 +16,7 @@ public class IPGuard extends JavaPlugin {
 
     private ConfigUtil configUtil;
     private static IPGuard instance;
+    private HookManager hookManager;
 
     @Override
     public void onEnable() {
@@ -27,38 +30,15 @@ public class IPGuard extends JavaPlugin {
         reloadConfig();
 
         try {
-            DatabaseManager.initialize(configUtil);
+            DatabaseManager.initialize(configUtil, this);
         } catch (Exception e) {
             getLogger().log(Level.SEVERE, "Failed to initialize database", e);
         }
 
-        getServer().getPluginManager().registerEvents(new JoinEvent(this, configUtil), this);
+        hookManager = new HookManager(this, configUtil);
+        hookManager.registerHooks();
 
-//        String authPlugin = configUtil.getConfig().getString("hooks.auth", "").toLowerCase();
-//        if (authPlugin.isEmpty()) {
-//            getLogger().info("No authentication plugin hook is configured.");
-//            return;
-//        }
-//
-//        switch (authPlugin) {
-//            case "authme":
-//                if (getServer().getPluginManager().getPlugin("AuthMe") != null) {
-//                    getLogger().info(ChatColor.AQUA + "Hooking into AuthMe for authentication.");
-//                } else {
-//                    getLogger().warning("AuthMe is configured but not found. Please install AuthMe or update the configuration.");
-//                }
-//                break;
-//            case "nlogin":
-//                if (getServer().getPluginManager().getPlugin("nLogin") != null) {
-//                    getLogger().info(ChatColor.AQUA + "Hooking into nLogin for authentication.");
-//                } else {
-//                    getLogger().warning("nLogin is configured but not found. Please install nLogin or update the configuration.");
-//                }
-//                break;
-//            default:
-//                getLogger().warning("Unsupported authentication plugin specified in the configuration.");
-//                break;
-//        }
+        getServer().getPluginManager().registerEvents(new PlayerJoinListener(this, configUtil, hookManager), this);
 
         CommandManager commandManager = new CommandManager(this, configUtil);
         commandManager.registerSuggestions();
@@ -81,6 +61,10 @@ public class IPGuard extends JavaPlugin {
         System.out.println(red + "   mc-IPGuard " + software + " " + version + reset);
         System.out.println(yellow + "   Discord @ dc.mongenscave.com" + reset);
         System.out.println(" ");
+
+        if (getConfig().getBoolean("update-checker.enabled", true)) {
+            new UpdateChecker(this, configUtil, 5389);
+        }
     }
 
     public static IPGuard getInstance() {

@@ -4,78 +4,75 @@ import com.zaxxer.hikari.HikariConfig;
 import com.zaxxer.hikari.HikariDataSource;
 import hu.kxtsoo.ipguard.database.DatabaseInterface;
 import hu.kxtsoo.ipguard.util.ConfigUtil;
+import org.bukkit.plugin.java.JavaPlugin;
 
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
 public class MySQL implements DatabaseInterface {
+    private final ConfigUtil configUtil;
+    private final JavaPlugin plugin;
     private HikariDataSource dataSource;
 
-    @Override
-    public void initialize(ConfigUtil configUtil) throws SQLException {
-        HikariConfig config = new HikariConfig();
-        String host = configUtil.getConfig().getString("database.host");
-        int port = configUtil.getConfig().getInt("database.port");
-        String databaseName = configUtil.getConfig().getString("database.name");
-        String username = configUtil.getConfig().getString("database.username");
-        String password = configUtil.getConfig().getString("database.password");
-
-        String jdbcUrl = "jdbc:mysql://" + host + ":" + port + "/" + databaseName + "?useSSL=true";
-        config.setJdbcUrl(jdbcUrl);
-        config.setUsername(username);
-        config.setPassword(password);
-
-        config.setMaximumPoolSize(configUtil.getConfig().getInt("database.pool.maximumPoolSize", 10));
-        config.setMinimumIdle(configUtil.getConfig().getInt("database.pool.minimumIdle", 5));
-        config.setConnectionTimeout(configUtil.getConfig().getLong("database.pool.connectionTimeout", 30000L));
-        config.setMaxLifetime(configUtil.getConfig().getLong("database.pool.maxLifetime", 1800000L));
-        config.setIdleTimeout(configUtil.getConfig().getLong("database.pool.idleTimeout", 600000L));
-
-        dataSource = new HikariDataSource(config);
-        createPlayerTable();
+    public MySQL(ConfigUtil configUtil, JavaPlugin plugin) {
+        this.configUtil = configUtil;
+        this.plugin = plugin;
     }
 
     @Override
-    public void initialize() {
-        throw new UnsupportedOperationException("No default initialization for MySQL");
+    public void initialize() throws SQLException {
+        HikariConfig hikariConfig = new HikariConfig();
+
+        String host = configUtil.getConfig().getString("storage.host", "localhost");
+        String port = configUtil.getConfig().getString("storage.port", "3306");
+        String database = configUtil.getConfig().getString("storage.name", "database_name");
+        String username = configUtil.getConfig().getString("storage.username", "root");
+        String password = configUtil.getConfig().getString("storage.password", "");
+
+        String jdbcUrl = "jdbc:mysql://" + host + ":" + port + "/" + database + "?useSSL=false";
+        hikariConfig.setJdbcUrl(jdbcUrl);
+        hikariConfig.setUsername(username);
+        hikariConfig.setPassword(password);
+
+        hikariConfig.setMaximumPoolSize(configUtil.getConfig().getInt("storage.pool.maximumPoolSize", 10));
+        hikariConfig.setMinimumIdle(configUtil.getConfig().getInt("storage.pool.minimumIdle", 5));
+        hikariConfig.setConnectionTimeout(configUtil.getConfig().getInt("storage.pool.connectionTimeout", 30000));
+        hikariConfig.setMaxLifetime(configUtil.getConfig().getInt("storage.pool.maxLifetime", 1800000));
+        hikariConfig.setIdleTimeout(configUtil.getConfig().getInt("storage.pool.idleTimeout", 600000));
+
+        dataSource = new HikariDataSource(hikariConfig);
+        createTables();
     }
 
     @Override
-    public void createPlayerTable() throws SQLException {
+    public void createTables() throws SQLException {
         try (Connection conn = dataSource.getConnection();
              Statement stmt = conn.createStatement()) {
-            String sql = "CREATE TABLE IF NOT EXISTS gig_players (" +
-                    "player_name VARCHAR(255) PRIMARY KEY, " +
+            String sql = "CREATE TABLE IF NOT EXISTS ipguard_players (" +
+                    "uuid CHAR(36) PRIMARY KEY, " +
                     "ip_address VARCHAR(255))";
             stmt.execute(sql);
         }
     }
 
     @Override
-    public void close() {
-        if (dataSource != null) {
-            dataSource.close();
-        }
-    }
-
-    @Override
-    public void addPlayer(String playerName, String ipAddress) throws SQLException {
-        String sql = "INSERT INTO gig_players (player_name, ip_address) VALUES (?, ?) ON DUPLICATE KEY UPDATE ip_address = VALUES(ip_address)";
+    public void addPlayer(String uuid, String ipAddress) throws SQLException {
+        String sql = "INSERT INTO ipguard_players (uuid, ip_address) VALUES (?, ?) ON DUPLICATE KEY UPDATE ip_address = VALUES(ip_address)";
         try (Connection connection = dataSource.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setString(1, playerName);
+            statement.setString(1, uuid);
             statement.setString(2, ipAddress);
             statement.executeUpdate();
         }
     }
 
     @Override
-    public boolean doesPlayerExist(String playerName) throws SQLException {
-        String sql = "SELECT 1 FROM gig_players WHERE player_name = ?";
+    public boolean doesPlayerExist(String uuid) throws SQLException {
+        String sql = "SELECT 1 FROM ipguard_players WHERE uuid = ?";
         try (Connection connection = dataSource.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setString(1, playerName);
+            statement.setString(1, uuid);
             try (ResultSet resultSet = statement.executeQuery()) {
                 return resultSet.next();
             }
@@ -83,11 +80,11 @@ public class MySQL implements DatabaseInterface {
     }
 
     @Override
-    public boolean removePlayer(String playerName) throws SQLException {
-        String sql = "DELETE FROM gig_players WHERE player_name = ?";
+    public boolean removePlayer(String uuid) throws SQLException {
+        String sql = "DELETE FROM ipguard_players WHERE uuid = ?";
         try (Connection connection = dataSource.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setString(1, playerName);
+            statement.setString(1, uuid);
             int rowsAffected = statement.executeUpdate();
             return rowsAffected > 0;
         }
@@ -95,27 +92,34 @@ public class MySQL implements DatabaseInterface {
 
     @Override
     public List<String> getDatabasePlayerNames() throws SQLException {
-        List<String> playerNames = new ArrayList<>();
-        String sql = "SELECT player_name FROM gig_players";
+        List<String> uuids = new ArrayList<>();
+        String sql = "SELECT uuid FROM ipguard_players";
         try (Connection connection = dataSource.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql);
              ResultSet resultSet = statement.executeQuery()) {
             while (resultSet.next()) {
-                playerNames.add(resultSet.getString("player_name"));
+                uuids.add(resultSet.getString("uuid"));
             }
         }
-        return playerNames;
+        return uuids;
     }
 
     @Override
-    public String getPlayerIP(String playerName) throws SQLException {
-        String sql = "SELECT ip_address FROM gig_players WHERE player_name = ?";
+    public String getPlayerIP(String uuid) throws SQLException {
+        String sql = "SELECT ip_address FROM ipguard_players WHERE uuid = ?";
         try (Connection connection = dataSource.getConnection();
              PreparedStatement statement = connection.prepareStatement(sql)) {
-            statement.setString(1, playerName);
+            statement.setString(1, uuid);
             try (ResultSet resultSet = statement.executeQuery()) {
                 return resultSet.next() ? resultSet.getString("ip_address") : "N/A";
             }
+        }
+    }
+
+    @Override
+    public void close() {
+        if (dataSource != null) {
+            dataSource.close();
         }
     }
 }

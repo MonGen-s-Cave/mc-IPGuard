@@ -1,1 +1,9 @@
-version: '1'
+hooks:
+  settings:
+    auth-plugin: AuthMe
+
+  register:
+    AuthMe: true
+    nLogin: false
+
+version: 1
