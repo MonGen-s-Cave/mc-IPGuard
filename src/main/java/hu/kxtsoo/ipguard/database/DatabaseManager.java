@@ -1,6 +1,8 @@
-package hu.kitsoo.gipguard.database;
+package hu.kxtsoo.ipguard.database;
 
-import hu.kitsoo.gipguard.util.ConfigUtil;
+import hu.kxtsoo.ipguard.database.impl.MySQL;
+import hu.kxtsoo.ipguard.database.impl.SQLite;
+import hu.kxtsoo.ipguard.util.ConfigUtil;
 
 import java.sql.SQLException;
 import java.util.List;
@@ -12,11 +14,11 @@ public class DatabaseManager {
         String driver = configUtil.getConfig().getString("database.driver");
         switch (driver.toLowerCase()) {
             case "sqlite":
-                database = new SQLiteDatabaseManager();
+                database = new SQLite();
                 database.initialize();
                 break;
             case "mysql":
-                database = new MySQLDatabaseManager();
+                database = new MySQL();
                 database.initialize(configUtil);
                 break;
             default:
@@ -53,6 +55,6 @@ public class DatabaseManager {
     }
 
     public static String getDatabaseType() {
-        return database instanceof MySQLDatabaseManager ? "mysql" : "sqlite";
+        return database instanceof MySQL ? "mysql" : "sqlite";
     }
 }

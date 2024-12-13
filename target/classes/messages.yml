@@ -27,7 +27,7 @@ help-menu:
   - "&r"
   - "&x&b&8&0&0&1&1&lg&x&b&e&0&0&0&f&lI&x&c&4&0&0&0&c&lP&x&c&a&0&0&0&a&lG&x&d&1&0&0&0&7&lu&x&d&7&0&0&0&5&la&x&d&d&0&0&0&2&lr&x&e&3&0&0&0&0&ld &8» &fAvailable commands:"
   - "&r"
-  - "&8&l• &c/gipguard add <player> <ip> &8- Assign an IP Address to an account."
+  - "&8&l• &c/gipguard add <player> <ip> &8- &7Assign an IP Address to an account."
   - "&8&l• &c/gipguard remove <player> &8- &7Delete the player's details from database."
   - "&8&l• &c/gipguard reload &8- &7Reload the plugin config file."
   - "&r"

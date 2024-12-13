@@ -1,4 +1,4 @@
-package hu.kitsoo.gipguard.util;
+package hu.kxtsoo.ipguard.util;
 
 import org.bukkit.ChatColor;
 import java.util.regex.Matcher;

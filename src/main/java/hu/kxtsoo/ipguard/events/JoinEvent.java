@@ -1,12 +1,11 @@
-package hu.kitsoo.gipguard.events;
+package hu.kxtsoo.ipguard.events;
 
 import com.nickuc.login.api.nLoginAPI;
 import com.nickuc.login.api.types.AccountData;
 import fr.xephi.authme.api.v3.AuthMeApi;
-import hu.kitsoo.gipguard.GIPGuard;
-import hu.kitsoo.gipguard.database.DatabaseManager;
-import hu.kitsoo.gipguard.util.ChatUtil;
-import hu.kitsoo.gipguard.util.ConfigUtil;
+import hu.kxtsoo.ipguard.IPGuard;
+import hu.kxtsoo.ipguard.database.DatabaseManager;
+import hu.kxtsoo.ipguard.util.ConfigUtil;
 import okhttp3.*;
 import org.bukkit.Bukkit;
 import org.bukkit.event.EventHandler;
@@ -28,10 +27,10 @@ import java.util.Objects;
 
 public class JoinEvent implements Listener {
 
-    private final GIPGuard plugin;
+    private final IPGuard plugin;
     private final ConfigUtil configUtil;
 
-    public JoinEvent(GIPGuard plugin, ConfigUtil configUtil) {
+    public JoinEvent(IPGuard plugin, ConfigUtil configUtil) {
         this.plugin = plugin;
         this.configUtil = configUtil;
     }
@@ -51,14 +50,14 @@ public class JoinEvent implements Listener {
                         if (configUtil.getConfig().getBoolean("discord.enabled")) {
                             sendWebhook(playerName, playerCurrentIP);
                         }
-
-                        List<String> kickReasons = configUtil.getMessages().getStringList("messages.player-kick");
-                        if (kickReasons.isEmpty()) {
-                            kickReasons = List.of("This user account is IP address protected!");
-                        }
-
-                        String kickReason = String.join("\n", kickReasons.stream().map(ChatUtil::colorizeHex).toList());
-                        Bukkit.getScheduler().runTask(plugin, () -> event.getPlayer().kickPlayer(kickReason));
+//
+//                        List<String> kickReasons = configUtil.getMessages().getStringList("messages.player-kick");
+//                        if (kickReasons.isEmpty()) {
+//                            kickReasons = List.of("This user account is IP address protected!");
+//                        }
+//
+//                        String kickReason = String.join("\n", kickReasons.stream().map(ChatUtil::colorizeHex).toList());
+                        Bukkit.getScheduler().runTask(plugin, () -> event.getPlayer().kickPlayer("asd"));
                     }
                 } catch (SQLException e) {
                     plugin.getLogger().warning("Failed to check player IP from the database: " + e.getMessage());

@@ -1,6 +1,6 @@
-package hu.kitsoo.gipguard.database;
+package hu.kxtsoo.ipguard.database;
 
-import hu.kitsoo.gipguard.util.ConfigUtil;
+import hu.kxtsoo.ipguard.util.ConfigUtil;
 
 import java.sql.SQLException;
 import java.util.List;

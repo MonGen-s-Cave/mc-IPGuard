@@ -1,4 +1,4 @@
-prefix: "&x&b&8&0&0&1&1&lg&x&b&e&0&0&0&f&lI&x&c&4&0&0&0&c&lP&x&c&a&0&0&0&a&lG&x&d&1&0&0&0&7&lu&x&d&7&0&0&0&5&la&x&d&d&0&0&0&2&lr&x&e&3&0&0&0&0&ld &8» "
+prefix: "&#B80F25[IPGuard]"
 
 #  driver: sqlite / mysql
 database:
@@ -18,6 +18,8 @@ database:
     maxLifetime: 1800000
     idleTimeout: 600000
 
+locale: en
+
 hooks:
   # Supported Auth plugins: AuthMe, nLogin
   auth: "AuthMe"
@@ -32,4 +34,4 @@ discord:
     footer: "Glowing Studios - gIPGuard Logs"
     timestamp: true
 
-config-version: "4"
+version: '1'
