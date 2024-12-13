@@ -4,59 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="67d7d712-429e-482e-8e66-b6c0e82a6531" name="Changes" comment="gIPGuard v1.0.4">
-      <change beforePath="$PROJECT_DIR$/.idea/jarRepositories.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/dependency-reduced-pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/dependency-reduced-pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hu/kitsoo/gipguard/GIPGuard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/IPGuard.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hu/kitsoo/gipguard/GIPGuardCommand.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hu/kitsoo/gipguard/commands/ActivateCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/commands/ActivateCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hu/kitsoo/gipguard/commands/AddCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/commands/AddCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hu/kitsoo/gipguard/commands/CheckCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/commands/CheckCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hu/kitsoo/gipguard/commands/ListCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/commands/ListCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hu/kitsoo/gipguard/commands/ReloadCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/commands/ReloadCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hu/kitsoo/gipguard/commands/RemoveCommand.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/commands/RemoveCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hu/kitsoo/gipguard/database/DatabaseInterface.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/database/DatabaseInterface.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hu/kitsoo/gipguard/database/DatabaseManager.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/database/DatabaseManager.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hu/kitsoo/gipguard/database/MySQLDatabaseManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hu/kitsoo/gipguard/database/SQLiteDatabaseManager.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hu/kitsoo/gipguard/events/JoinEvent.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/events/JoinEvent.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hu/kitsoo/gipguard/util/ChatUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/util/ChatUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hu/kitsoo/gipguard/util/ConfigUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/util/ConfigUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/hu/kitsoo/gipguard/util/TabComplete.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/messages.yml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/plugin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/config.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hu/kitsoo/gipguard/GIPGuard.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hu/kitsoo/gipguard/GIPGuardCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hu/kitsoo/gipguard/commands/ActivateCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hu/kitsoo/gipguard/commands/AddCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hu/kitsoo/gipguard/commands/CheckCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hu/kitsoo/gipguard/commands/ListCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hu/kitsoo/gipguard/commands/ReloadCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hu/kitsoo/gipguard/commands/RemoveCommand.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hu/kitsoo/gipguard/database/DatabaseInterface.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hu/kitsoo/gipguard/database/DatabaseManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hu/kitsoo/gipguard/database/MySQLDatabaseManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hu/kitsoo/gipguard/database/SQLiteDatabaseManager.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hu/kitsoo/gipguard/events/JoinEvent$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hu/kitsoo/gipguard/events/JoinEvent$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hu/kitsoo/gipguard/events/JoinEvent.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hu/kitsoo/gipguard/util/ChatUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hu/kitsoo/gipguard/util/ConfigUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/hu/kitsoo/gipguard/util/TabComplete.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/messages.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/messages.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plugin.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gIPGuard-1.0.4-shaded.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/gIPGuard-1.0.4.jar" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/createdFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/original-gIPGuard-1.0.4.jar" beforeDir="false" />
-    </list>
+    <list default="true" id="67d7d712-429e-482e-8e66-b6c0e82a6531" name="Changes" comment="2.0.0" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -95,8 +43,8 @@
 }</component>
   <component name="GithubPullRequestsUISettings">{
   &quot;selectedUrlAndAccountId&quot;: {
-    &quot;url&quot;: &quot;https://github.com/Glowing-Studios/gGuildSystem.git&quot;,
-    &quot;accountId&quot;: &quot;3d0e2cf4-ebd3-471a-ae06-2b50c44ee6e3&quot;
+    &quot;url&quot;: &quot;https://github.com/MonGen-s-Cave/mc-IPGuard.git&quot;,
+    &quot;accountId&quot;: &quot;4c75f994-4882-464b-9b84-ea0ce0aff85b&quot;
   }
 }</component>
   <component name="MarkdownSettingsMigration">
@@ -390,7 +338,15 @@
       <option name="project" value="LOCAL" />
       <updated>1714006030410</updated>
     </task>
-    <option name="localTasksCounter" value="5" />
+    <task id="LOCAL-00005" summary="2.0.0">
+      <option name="closed" value="true" />
+      <created>1734101371964</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1734101371964</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -423,7 +379,8 @@
     <MESSAGE value="gIPGuard" />
     <MESSAGE value="gIPGuard v1.0.4 update released" />
     <MESSAGE value="gIPGuard v1.0.4" />
-    <option name="LAST_COMMIT_MESSAGE" value="gIPGuard v1.0.4" />
+    <MESSAGE value="2.0.0" />
+    <option name="LAST_COMMIT_MESSAGE" value="2.0.0" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
