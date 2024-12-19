@@ -18,7 +18,7 @@ public class HookManager {
     }
 
     public void registerHooks() {
-        String selectedAuthPlugin = configUtil.getConfig().getString("hooks.settings.auth-plugin", "").toLowerCase();
+        String selectedAuthPlugin = configUtil.getHooks().getString("hooks.settings.auth-plugin", "").toLowerCase();
 
         if (selectedAuthPlugin.equals("authme") &&
                 configUtil.getHooks().getBoolean("hooks.register.AuthMe", true) &&
