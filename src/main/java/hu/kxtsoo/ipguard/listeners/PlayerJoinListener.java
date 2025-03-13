@@ -44,9 +44,6 @@ public class PlayerJoinListener implements Listener {
                 String playerIP = DatabaseManager.getPlayerIP(uuid);
 
                 if (!"N/A".equals(playerIP) && !playerCurrentIP.equals(playerIP)) {
-                    if (configUtil.getConfig().getBoolean("discord.enabled")) {
-                        sendWebhook(playerName, playerCurrentIP);
-                    }
 
                     String kickReason = configUtil.getMessage("messages.player-kick");
                     if (kickReason.isEmpty()) {
@@ -55,6 +52,10 @@ public class PlayerJoinListener implements Listener {
 
                     String finalKickReason = kickReason;
                     SchedulerManager.run(() -> event.getPlayer().kickPlayer(finalKickReason));
+
+                    if (configUtil.getConfig().getBoolean("discord.enabled")) {
+                        sendWebhook(playerName, playerCurrentIP);
+                    }
                 }
             } catch (SQLException e) {
                 plugin.getLogger().warning("Failed to check player IP from the database: " + e.getMessage());

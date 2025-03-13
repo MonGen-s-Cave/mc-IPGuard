@@ -50,19 +50,19 @@ public class IPGuard extends JavaPlugin {
         String software = getServer().getName();
         String version = getServer().getVersion();
 
-        System.out.println(" ");
-        System.out.println(red + "   ___ ____   ____ _   _   _    ____  ____" + reset);
-        System.out.println(red + "   |_ _|  _ \\ / ___| | | | / \\  |  _ \\|  _ \\" + reset);
-        System.out.println(red + "    | || |_) | |  _| | | |/ _ \\ | |_) | | | |" + reset);
-        System.out.println(red + "    | ||  __/| |_| | |_| / ___ \\|  _ <| |_| |" + reset);
-        System.out.println(red + "   |___|_|    \\____|\\___/_/   \\_\\_| \\_\\____/ " + reset);
-        System.out.println(" ");
-        System.out.println(red + "   The plugin successfully started." + reset);
-        System.out.println(red + "   mc-IPGuard " + software + " " + version + reset);
-        System.out.println(yellow + "   Discord @ dc.mongenscave.com" + reset);
-        System.out.println(" ");
+        getLogger().info(" ");
+        getLogger().info(red + "   ___ ____   ____ _   _   _    ____  ____" + reset);
+        getLogger().info(red + "   |_ _|  _ \\ / ___| | | | / \\  |  _ \\|  _ \\" + reset);
+        getLogger().info(red + "    | || |_) | |  _| | | |/ _ \\ | |_) | | | |" + reset);
+        getLogger().info(red + "    | ||  __/| |_| | |_| / ___ \\|  _ <| |_| |" + reset);
+        getLogger().info(red + "   |___|_|    \\____|\\___/_/   \\_\\_| \\_\\____/ " + reset);
+        getLogger().info(" ");
+        getLogger().info(red + "   The plugin successfully started." + reset);
+        getLogger().info(red + "   mc-IPGuard " + software + " " + version + reset);
+        getLogger().info(yellow + "   Discord @ dc.mongenscave.com" + reset);
+        getLogger().info(" ");
 
-        if (getConfig().getBoolean("update-checker.enabled", true)) {
+        if (configUtil.getConfig().getBoolean("update-checker.enabled", true)) {
             new UpdateChecker(this, configUtil, 5389);
         }
     }

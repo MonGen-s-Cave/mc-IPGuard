@@ -25,6 +25,7 @@ public class ConfigUtil {
         this.plugin = plugin;
         setupConfig();
         setupMessages();
+        setupHooks();
     }
 
     public void setupConfig() {
@@ -137,5 +138,6 @@ public class ConfigUtil {
     public void reloadConfig() {
         setupConfig();
         setupMessages();
+        setupHooks();
     }
 }

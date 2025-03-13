@@ -4,9 +4,16 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="67d7d712-429e-482e-8e66-b6c0e82a6531" name="Changes" comment="2.0.0">
+    <list default="true" id="67d7d712-429e-482e-8e66-b6c0e82a6531" name="Changes" comment="2.0.1">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/hooks.yml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/hooks.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/IPGuard.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/IPGuard.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/listeners/PlayerJoinListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/listeners/PlayerJoinListener.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/util/ConfigUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/util/ConfigUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/util/UpdateChecker.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/hu/kxtsoo/ipguard/util/UpdateChecker.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/plugin.yml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/plugin.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-archiver/pom.properties" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-archiver/pom.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" beforeDir="false" afterPath="$PROJECT_DIR$/target/maven-status/maven-compiler-plugin/compile/default-compile/inputFiles.lst" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -397,7 +404,31 @@
       <option name="project" value="LOCAL" />
       <updated>1734112407880</updated>
     </task>
-    <option name="localTasksCounter" value="12" />
+    <task id="LOCAL-00012" summary="2.0.0">
+      <option name="closed" value="true" />
+      <created>1734623785457</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1734623785457</updated>
+    </task>
+    <task id="LOCAL-00013" summary="2.0.0">
+      <option name="closed" value="true" />
+      <created>1734623791931</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1734623791931</updated>
+    </task>
+    <task id="LOCAL-00014" summary="2.0.1">
+      <option name="closed" value="true" />
+      <created>1734623795819</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1734623795819</updated>
+    </task>
+    <option name="localTasksCounter" value="15" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -431,7 +462,8 @@
     <MESSAGE value="gIPGuard v1.0.4 update released" />
     <MESSAGE value="gIPGuard v1.0.4" />
     <MESSAGE value="2.0.0" />
-    <option name="LAST_COMMIT_MESSAGE" value="2.0.0" />
+    <MESSAGE value="2.0.1" />
+    <option name="LAST_COMMIT_MESSAGE" value="2.0.1" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />
